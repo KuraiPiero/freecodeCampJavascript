@@ -18,22 +18,27 @@ let show = console.log;
 
 function palindrome(str) {
   let rigthSide = "";
+
   let leftSide = "";
 
   for (let i = 0; i < str.length + 1; i++) {
     let rightIndex = parseInt(i);
     if (RegExp(/^\p{L}/, "u").test(str[i])) {
       if (str[rightIndex] != undefined) {
-        rigthSide += str[rightIndex];
+        rigthSide += str[rightIndex].toLocaleLowerCase();
       }
     }
   }
   for (let j = 1; j < str.length + 1; j++) {
     if (RegExp(/^\p{L}/, "u").test(str[str.length - j])) {
-      leftSide += str[str.length - j];
+      leftSide += str[str.length - j].toLocaleLowerCase();
     }
   }
   show(rigthSide == leftSide);
 }
 
+palindrome("eye");
+palindrome("_eye");
+palindrome("race car");
+palindrome("not a palindrome");
 palindrome("A man, a plan, a canal. Panama");
