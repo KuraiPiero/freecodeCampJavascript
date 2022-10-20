@@ -7,7 +7,9 @@
         logger.innerHTML +=
           (JSON && JSON.stringify
             ? JSON.stringify(arguments[i], undefined, 2)
-            : arguments[i]) + "<br />";
+            : arguments[i]) +
+          " " +
+          "<br />";
       } else {
         logger.innerHTML += arguments[i] + "<br />";
       }
