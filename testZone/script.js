@@ -14,3 +14,5 @@ function convertToRoman(num) {
   let temp = num;
   for (let i = 0; i < romanNumbers.length; i++) {}
 }
+
+show(45);
