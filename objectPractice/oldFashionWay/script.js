@@ -17,22 +17,59 @@ const nineteenEightyFour = new Book(
   "Not started"
 );
 
-let card = `
-<section class="book-card">
-    <h4 class="card-title"><b>${nineteenEightyFour.title}</b></h4>
-    <figure class="card-img">
-        <img class="img" src="${nineteenEightyFour.img}" />
-        <figcaption class="img-caption"></figcaption>
-    </figure>
-    <p class="author"><b>Author:</b> ${nineteenEightyFour.author}</p>
-    <p class="genres"><b>Genres:</b><small> ${nineteenEightyFour.genres}</small></p>    
-    <p class="ISBN"><b>ISBN:</b> ${nineteenEightyFour.id}</p>
-    <p class="summary"><small>${nineteenEightyFour.summary}</small></p>
-    <p class="status"><b>Status:</b> ${nineteenEightyFour.status}</p>
-    <p class="currentPage"><b>Current Page:</b> ${nineteenEightyFour.currentPage}</p>
-    <button src="#" class="button">Start Reading</button>
-    
-</section>  
-`;
-document.body.innerHTML = card;
-document.title = nineteenEightyFour.title;
+function card(object) {
+  let maingTag = document.createElement("article");
+  maingTag.id = "book-card";
+  document.body.appendChild(maingTag);
+  for (let key in object) {
+    if (key == "img") {
+      let insertImg = new Image();
+      insertImg.classList.add("card-img");
+      insertImg.src = object.img;
+      document.getElementById("book-card").appendChild(insertImg);
+    } else if (key == "Title") {
+      let title = document.createElement("p");
+      title.classList.add("card-" + key);
+      title.textContent = key + ": " + object.Title;
+      document.getElementById("book-card").appendChild(title);
+    } else if (key == "Author") {
+      let author = document.createElement("p");
+      author.classList.add("card-" + key);
+      author.textContent = key + ": " + object.Author;
+      document.getElementById("book-card").appendChild(author);
+    } else if (key == "id") {
+      let id = document.createElement("p");
+      id.classList.add("card-" + key);
+      id.textContent = "ISBN" + ": " + object.id;
+      document.getElementById("book-card").appendChild(id);
+    } else if (key == "Genres") {
+      let genres = document.createElement("p");
+      genres.classList.add("card-" + key);
+      genres.textContent = key + ": " + object.Genres;
+      document.getElementById("book-card").appendChild(genres);
+    } else if (key == "Status") {
+      let status = document.createElement("p");
+      status.classList.add("card-" + key);
+      status.textContent = key + ": " + object.Status;
+      document.getElementById("book-card").appendChild(status);
+    } else if (key == "CurrentPage") {
+      let CurrentPage = document.createElement("p");
+      CurrentPage.classList.add("card-" + key);
+      CurrentPage.textContent = "Current Page" + ": " + object.CurrentPage;
+      document.getElementById("book-card").appendChild(CurrentPage);
+    } else if (key == "Summary") {
+      let Summary = document.createElement("p");
+      Summary.classList.add("card-" + key);
+      Summary.textContent = key + ": " + object.Summary;
+      document.getElementById("book-card").appendChild(Summary);
+    }
+  }
+  let button = document.createElement("button");
+  button.classList.add("card-button");
+  button.textContent = "Start Reading";
+  document.getElementById("book-card").appendChild(button);
+}
+
+card(nineteenEightyFour);
+//document.body.innerHTML = content;
+//document.title = nineteenEightyFour.title;

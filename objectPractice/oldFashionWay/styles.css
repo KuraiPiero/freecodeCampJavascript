@@ -2,46 +2,70 @@
   margin: 0;
   padding: 0;
 }
-.book-card {
-  width: 50em;
+#book-card {
+  width: 35em;
   margin: 2em auto;
   display: grid;
   grid-template-columns: 15em 20em;
-  grid-template-rows: 3em 2em 3em 2em 2em 2em 9em 3em;
+  grid-template-rows: 3em 3em 3em 3em 3em 8em 0.5em 3em;
   grid-template-areas:
-    "card-img card-title"
-    "card-img author"
-    "card-img genres"
-    "card-img ISBN"
-    "card-img status"
-    "card-img currentPage"
-    "card-img summary"
-    "button button";
+    "card-img card-Title"
+    "card-img card-Author"
+    "card-img card-Genres"
+    "card-img card-Status"
+    "card-img card-CurrentPage"
+    "card-img card-Summary"
+    "card-id ."
+    "card-button card-button";
   align-items: center;
   justify-items: start;
 }
-.card-title {
-  grid-area: card-title;
+.card-Title {
+  grid-area: card-Title;
+}
+.card-Title::first-letter {
+  font-size: 2em;
 }
 .card-img {
   grid-area: card-img;
 }
-.author {
-  grid-area: author;
+
+.card-Author {
+  grid-area: card-Author;
 }
-.genres {
-  grid-area: genres;
+.card-Author::first-letter {
+  font-size: 2em;
 }
-.summary {
-  grid-area: summary;
+.card-Genres {
+  grid-area: card-Genres;
 }
-.status {
-  grid-area: status;
+.card-Genres::first-letter {
+  font-size: 2em;
 }
-.currentPage {
-  grid-area: currentPage;
+.card-id {
+  grid-area: card-id;
+  font-size: 0.5em;
 }
-.button {
-  grid-area: button;
+
+.card-Summary {
+  grid-area: card-Summary;
+}
+.card-Summary::first-letter {
+  font-size: 2em;
+}
+.card-Status {
+  grid-area: card-Status;
+}
+.card-Status::first-letter {
+  font-size: 2em;
+}
+.card-CurrentPage {
+  grid-area: card-CurrentPage;
+}
+.card-CurrentPage::first-letter {
+  font-size: 2em;
+}
+.card-button {
+  grid-area: card-button;
   width: 100%;
 }

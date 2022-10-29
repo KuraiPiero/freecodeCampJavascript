@@ -2,18 +2,18 @@ class Book {
   constructor(img, ISBN, title, author, genre, summary, status, currentPage) {
     this.img = img;
     this.id = ISBN;
-    this.title = title;
-    this.author = author;
-    this.genres = genre;
-    this.summary = summary;
-    this.status = status;
-    this.currentPage = currentPage;
+    this.Title = title;
+    this.Author = author;
+    this.Genres = genre;
+    this.Summary = summary;
+    this.Status = status;
+    this.CurrentPage = currentPage;
   }
   updateReadStatus(newStatus) {
-    this.status = newStatus;
+    this.Status = newStatus;
   }
   updateCurrentPage(newCurrentPage) {
-    this.currentPage = newCurrentPage;
+    this.CurrentPage = newCurrentPage;
   }
 }
 
