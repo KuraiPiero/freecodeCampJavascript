@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.book-card {
+  width: 50em;
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: 15em 20em;
+  grid-template-rows: 3em 2em 3em 2em 2em 2em 9em 3em;
+  grid-template-areas:
+    "card-img card-title"
+    "card-img author"
+    "card-img genres"
+    "card-img ISBN"
+    "card-img status"
+    "card-img currentPage"
+    "card-img summary"
+    "button button";
+  align-items: center;
+  justify-items: start;
+}
+.card-title {
+  grid-area: card-title;
+}
+.card-img {
+  grid-area: card-img;
+}
+.author {
+  grid-area: author;
+}
+.genres {
+  grid-area: genres;
+}
+.summary {
+  grid-area: summary;
+}
+.status {
+  grid-area: status;
+}
+.currentPage {
+  grid-area: currentPage;
+}
+.button {
+  grid-area: button;
+  width: 100%;
+}
