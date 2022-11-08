@@ -36,3 +36,4 @@ let card = `
 `;
 document.body.innerHTML = card;
 document.title = nineteenEightyFour.title;
+milk = "fake"

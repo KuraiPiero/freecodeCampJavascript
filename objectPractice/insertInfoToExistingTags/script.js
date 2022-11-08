@@ -30,3 +30,5 @@ function injectContent(object) {
 }
 
 injectContent(nineteenEightyFour);
+
+show("hey");
